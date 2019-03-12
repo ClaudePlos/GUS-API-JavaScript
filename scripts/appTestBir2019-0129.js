@@ -1268,7 +1268,7 @@ function daneSzukaj(pGrupaCech) {
 }
 
 function daneSzukajComplete(result) {
-  console.log("result"+result);
+  console.log("daneSzukajComplete:"+result);
 	//alert("result"+result);
 	statusFiltrowania = false;
 	try {
@@ -1296,6 +1296,7 @@ function daneSzukajComplete(result) {
 		//JP 07-03-16
 		var myJSONObject = JSON.parse(poprawZnakiSpecjalne(jsObj.d));
 		console.log('myJSONObject ' + myJSONObject);
+		danePobierzPelnyRaport(473164548, "pNazwaRaportu", 123)
 		//alert(myJSONObject);
 		//interfejsCaptchaOFF();
 		document.getElementById("divListaJednostek").innerHTML = wygenerujHtmlTable(myJSONObject, "tabelaZbiorczaListaJednostek", "tabelaZbiorczaListaJednostekAltRow", true);
@@ -1384,7 +1385,7 @@ function daneKomunikatComplete(result) {
 var _nazwaRaportu = '';
 
 function danePobierzPelnyRaport(pRegon, pNazwaRaportu, pSilosID) {
-
+ console.log("danePobierzPelnyRaport");
     _nazwaRaportu = pNazwaRaportu ; //VRybowska modyf//09I2019 LS kasowanie _LODZ
 	var p = '{"pRegon":"' + pRegon + '","pNazwaRaportu":"' + pNazwaRaportu + '", "pSilosID":"' + pSilosID + '"}';
 	sendRequest("DanePobierzPelnyRaport", p, danePobierzPelnyRaportComplete);
@@ -1849,6 +1850,9 @@ function zaloguj() {
 	document.getElementById('txtNip').onkeypress = function (event) { onEnter(event); } //MS 2018-02-13
 	document.getElementById('txtKrs').onkeypress = function (event) { onEnter(event); } //MS 2018-02-13
 
+	//var _kluczuzytkownika='aaaa?bbbbbccccccdd|?'; //klucz dla produkcji
+	//var _kluczuzytkownika='xxxADMINMASTERKEYxxx'; /* REMOVE BEFORE PRODUCTION */
+	// testowy: abcde12345abcde12345
 	var p = '{"pKluczUzytkownika":"abcde12345abcde12345"}'; /// KLUCZ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Uzytkownika s
 
 	sendRequest("Zaloguj", p, zalogujComplete);

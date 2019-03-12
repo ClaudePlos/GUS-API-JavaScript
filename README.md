@@ -1,4 +1,4 @@
-# autor: klaudiusz.skowronski mail: claude-plos@o2.pl
+# author: klaudiusz.skowronski mail: claude-plos@o2.pl
 # GUS API - JavaScript
 Prosta app, korzystająca z GUS API w celu pobrania danych firmy (adresy itp) po podaniu numeru NIP.
 
