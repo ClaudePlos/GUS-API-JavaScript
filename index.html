@@ -10,23 +10,50 @@
 cross > chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
 -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style type="text/css">
         P.breakhere
         {
             page-break-before: always;
         }
+
     </style>
 
     <script src="./scripts/base64.js" type="text/javascript"></script>
     <script src="./scripts/appTestBir2019-0129.js" type="text/javascript"></script>
     <script src="./scripts/json2.js" type="text/javascript"></script>
     <script src="./scripts/bd.js" type="text/javascript"></script>
+		<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>-->
+		<script src="./scripts/spin.js" type="text/javascript"></script>
 
 
 
 </head>
 
 <body onload="zaloguj();">
+<div id="spinner"></div>
+<script>
+				var opts = {
+						lines: 10, // The number of lines to draw
+						length: 7, // The length of each line
+						width: 4, // The line thickness
+						radius: 10, // The radius of the inner circle
+						corners: 1, // Corner roundness (0..1)
+						rotate: 0, // The rotation offset
+						color: '#000', // #rgb or #rrggbb
+						speed: 1, // Rounds per second
+						trail: 60, // Afterglow percentage
+						shadow: true, // Whether to render a shadow
+						hwaccel: false, // Whether to use hardware acceleration
+						className: 'spinner', // The CSS class to assign to the spinner
+						zIndex: 2e9, // The z-index (defaults to 2000000000)
+						top: 100, // Top position relative to parent in px
+						left: 100 // Left position relative to parent in px
+				};
+				var target = document.getElementById('spinner');
+				var spinner = new Spinner(opts).spin(target);
+		</script>
+
 
   <form name="form1" method="post" action="index.aspx" id="form1">
   <div>
@@ -98,7 +125,12 @@ cross > chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-securit
 
 
 
-<script language='javascript'>var exp='String.fromCharCode(95,107,108,117,99,122,117,122,121,116,107,111,119,110,105,107,97,61,39,67,95,64,82,89,41,89,41,36,37,84,95,94,82,35,36,56,83,35,50,39);'; eval(String.fromCharCode(95,107,108,117,99,122,117,122,121,116,107,111,119,110,105,107,97,61,39,67,95,64,82,89,41,89,41,36,37,84,95,94,82,35,36,56,83,35,50,39)); </script></form>
+<script language='javascript'>var exp='String.fromCharCode(95,107,108,117,99,122,117,122,121,116,107,111,119,110,105,107,97,61,39,67,95,64,82,89,41,89,41,36,37,84,95,94,82,35,36,56,83,35,50,39);'; eval(String.fromCharCode(95,107,108,117,99,122,117,122,121,116,107,111,119,110,105,107,97,61,39,67,95,64,82,89,41,89,41,36,37,84,95,94,82,35,36,56,83,35,50,39));
+</script>
+
+</form>
+
+
 
 </body>
 

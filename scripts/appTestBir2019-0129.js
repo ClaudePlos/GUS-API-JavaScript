@@ -1157,7 +1157,8 @@ function wyczyscRaport() {
 //  Szukaj podmiot�w w bazie DANE SZUKAJ
 //
 function daneSzukaj(pGrupaCech) {
-
+console.log("Spin");
+spinner.spin(target);
 	grupaCech = pGrupaCech;
 	//alert(document.getElementById("txtRegon").value.length);
 	//alert('daneSzukaj: ' + pGrupaCech);
@@ -1268,6 +1269,7 @@ function daneSzukaj(pGrupaCech) {
 }
 
 function daneSzukajComplete(result) {
+	spinner.stop();
   console.log("daneSzukajComplete:"+result);
 	//alert("result"+result);
 	statusFiltrowania = false;
@@ -1853,12 +1855,13 @@ function zaloguj() {
 	//var _kluczuzytkownika='aaaa?bbbbbccccccdd|?'; //klucz dla produkcji
 	//var _kluczuzytkownika='xxxADMINMASTERKEYxxx'; /* REMOVE BEFORE PRODUCTION */
 	// testowy: abcde12345abcde12345
-	var p = '{"pKluczUzytkownika":"abcde12345abcde12345"}'; /// KLUCZ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Uzytkownika s
+	var p = 'port'; /// KLUCZ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Uzytkownika s
 
 	sendRequest("Zaloguj", p, zalogujComplete);
 }
 
 function zalogujComplete(result) {
+	spinner.stop();
   console.log("zalogujComplete: " + result);
 	if (result.length != 28) {
 		wyswietlKomunikatDanych("<p style='color:Red; font-size:13px'>Usluga chwilowo niedostepna. Przepraszamy za utrudnienia.<br> W przypadku powtarzania sie problemu prosimy o zgloszenie na adres <a href='mailto:regon_bir@stat.gov.pl'><strong>regon_bir@stat.gov.pl</strong></a></p>");
