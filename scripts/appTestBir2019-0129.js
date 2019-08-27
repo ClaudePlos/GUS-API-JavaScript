@@ -1269,7 +1269,7 @@ spinner.spin(target);
 }
 
 function daneSzukajComplete(result) {
-	spinner.stop();
+	//spinner.stop();
   console.log("daneSzukajComplete:"+result);
 	//alert("result"+result);
 	statusFiltrowania = false;
@@ -1855,7 +1855,7 @@ function zaloguj() {
 	//var _kluczuzytkownika='aaaa?bbbbbccccccdd|?'; //klucz dla produkcji
 	//var _kluczuzytkownika='xxxADMINMASTERKEYxxx'; /* REMOVE BEFORE PRODUCTION */
 	// testowy: abcde12345abcde12345
-	var p = 'port'; /// KLUCZ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Uzytkownika s
+	var p = '{"pKluczUzytkownika":"abcde12345abcde12345"}'; /// KLUCZ !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Uzytkownika s
 
 	sendRequest("Zaloguj", p, zalogujComplete);
 }
